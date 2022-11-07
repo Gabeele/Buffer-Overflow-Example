@@ -9,6 +9,8 @@ Using the command line and your complier to turn off any overflow or stack curru
 3. In the same terminal, execute the complied application by entering `example.exe`
 4. Now enter the password `password`
 5. The system should let you in. 
+
+
 However, to trigger a buffer overflow, you'll need to overflow the input buffer by entering in any characters greater than the buffer limit (Limit is 15)
 Repeat and continue from step 3, but instead of using the password, type in any characters greater than 15. 
 The system should print out `Wrong password` but still provide access rights to the user. This is beacuse the buffer was filled and continued into the next set of memory addresses, ensuring the boolean value was not 0; anything greater than 0 would allow access rights. 
